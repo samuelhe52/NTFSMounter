@@ -1,0 +1,376 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9F0608392BA8988C00D86470 /* NTFSMounterError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0608382BA8988C00D86470 /* NTFSMounterError.swift */; };
+		9F06083B2BA898A800D86470 /* VolumeInfoUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F06083A2BA898A800D86470 /* VolumeInfoUtils.swift */; };
+		9F06083D2BA898C200D86470 /* ShellCommandUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F06083C2BA898C200D86470 /* ShellCommandUtils.swift */; };
+		9F06083F2BA898D200D86470 /* PlistProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F06083E2BA898D200D86470 /* PlistProcessor.swift */; };
+		9F0608432BA899EB00D86470 /* FirstRun.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0608422BA899EB00D86470 /* FirstRun.swift */; };
+		9F0608452BA89A1300D86470 /* Paths.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0608442BA89A1300D86470 /* Paths.swift */; };
+		9F48D0F42AC848130004FDCB /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F48D0F32AC848130004FDCB /* main.swift */; };
+		9F7EB83A2BAFE9C50017AFFE /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = 9F7EB8392BAFE9C50017AFFE /* KeychainAccess */; };
+		9F7EB83C2BAFEC720017AFFE /* PasswordStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7EB83B2BAFEC720017AFFE /* PasswordStore.swift */; };
+		9F7EB83E2BAFF3D10017AFFE /* NTFSMount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7EB83D2BAFF3D10017AFFE /* NTFSMount.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		9F48D0EE2AC848130004FDCB /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		9F0608382BA8988C00D86470 /* NTFSMounterError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NTFSMounterError.swift; sourceTree = "<group>"; };
+		9F06083A2BA898A800D86470 /* VolumeInfoUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumeInfoUtils.swift; sourceTree = "<group>"; };
+		9F06083C2BA898C200D86470 /* ShellCommandUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShellCommandUtils.swift; sourceTree = "<group>"; };
+		9F06083E2BA898D200D86470 /* PlistProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlistProcessor.swift; sourceTree = "<group>"; };
+		9F0608422BA899EB00D86470 /* FirstRun.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstRun.swift; sourceTree = "<group>"; };
+		9F0608442BA89A1300D86470 /* Paths.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Paths.swift; sourceTree = "<group>"; };
+		9F48D0F02AC848130004FDCB /* ntfsmounter */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ntfsmounter; sourceTree = BUILT_PRODUCTS_DIR; };
+		9F48D0F32AC848130004FDCB /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		9F7EB83B2BAFEC720017AFFE /* PasswordStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordStore.swift; sourceTree = "<group>"; };
+		9F7EB83D2BAFF3D10017AFFE /* NTFSMount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NTFSMount.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9F48D0ED2AC848130004FDCB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9F7EB83A2BAFE9C50017AFFE /* KeychainAccess in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9F48D0E72AC848130004FDCB = {
+			isa = PBXGroup;
+			children = (
+				9F48D0F22AC848130004FDCB /* NTFSMounter */,
+				9F48D0F12AC848130004FDCB /* Products */,
+				9FA39B822ACC384100B9AEBA /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		9F48D0F12AC848130004FDCB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9F48D0F02AC848130004FDCB /* ntfsmounter */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9F48D0F22AC848130004FDCB /* NTFSMounter */ = {
+			isa = PBXGroup;
+			children = (
+				9F48D0F32AC848130004FDCB /* main.swift */,
+				9F7EB83D2BAFF3D10017AFFE /* NTFSMount.swift */,
+				9F0608422BA899EB00D86470 /* FirstRun.swift */,
+				9F7EB83B2BAFEC720017AFFE /* PasswordStore.swift */,
+				9F06083E2BA898D200D86470 /* PlistProcessor.swift */,
+				9F06083A2BA898A800D86470 /* VolumeInfoUtils.swift */,
+				9F06083C2BA898C200D86470 /* ShellCommandUtils.swift */,
+				9F0608382BA8988C00D86470 /* NTFSMounterError.swift */,
+				9F0608442BA89A1300D86470 /* Paths.swift */,
+			);
+			path = NTFSMounter;
+			sourceTree = "<group>";
+		};
+		9FA39B822ACC384100B9AEBA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9F48D0EF2AC848130004FDCB /* ntfsmounter */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9F48D0F72AC848130004FDCB /* Build configuration list for PBXNativeTarget "ntfsmounter" */;
+			buildPhases = (
+				9F48D0EC2AC848130004FDCB /* Sources */,
+				9F48D0ED2AC848130004FDCB /* Frameworks */,
+				9F48D0EE2AC848130004FDCB /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ntfsmounter;
+			packageProductDependencies = (
+				9F7EB8392BAFE9C50017AFFE /* KeychainAccess */,
+			);
+			productName = ntfsmount;
+			productReference = 9F48D0F02AC848130004FDCB /* ntfsmounter */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9F48D0E82AC848130004FDCB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1530;
+				TargetAttributes = {
+					9F48D0EF2AC848130004FDCB = {
+						CreatedOnToolsVersion = 15.0;
+					};
+				};
+			};
+			buildConfigurationList = 9F48D0EB2AC848130004FDCB /* Build configuration list for PBXProject "NTFSMounter" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9F48D0E72AC848130004FDCB;
+			packageReferences = (
+				9F7EB8382BAFE9C50017AFFE /* XCRemoteSwiftPackageReference "KeychainAccess" */,
+			);
+			productRefGroup = 9F48D0F12AC848130004FDCB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9F48D0EF2AC848130004FDCB /* ntfsmounter */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9F48D0EC2AC848130004FDCB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9F7EB83E2BAFF3D10017AFFE /* NTFSMount.swift in Sources */,
+				9F48D0F42AC848130004FDCB /* main.swift in Sources */,
+				9F06083D2BA898C200D86470 /* ShellCommandUtils.swift in Sources */,
+				9F0608432BA899EB00D86470 /* FirstRun.swift in Sources */,
+				9F06083B2BA898A800D86470 /* VolumeInfoUtils.swift in Sources */,
+				9F0608392BA8988C00D86470 /* NTFSMounterError.swift in Sources */,
+				9F0608452BA89A1300D86470 /* Paths.swift in Sources */,
+				9F7EB83C2BAFEC720017AFFE /* PasswordStore.swift in Sources */,
+				9F06083F2BA898D200D86470 /* PlistProcessor.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		9F48D0F52AC848130004FDCB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		9F48D0F62AC848130004FDCB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = NO;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		9F48D0F82AC848130004FDCB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
+				CODE_SIGN_STYLE = Automatic;
+				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_TEAM = LB52UWA223;
+				ENABLE_HARDENED_RUNTIME = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.samuelhe.ntfsmounter;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		9F48D0F92AC848130004FDCB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
+				CODE_SIGN_STYLE = Automatic;
+				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_TEAM = LB52UWA223;
+				ENABLE_HARDENED_RUNTIME = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.samuelhe.ntfsmounter;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9F48D0EB2AC848130004FDCB /* Build configuration list for PBXProject "NTFSMounter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9F48D0F52AC848130004FDCB /* Debug */,
+				9F48D0F62AC848130004FDCB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9F48D0F72AC848130004FDCB /* Build configuration list for PBXNativeTarget "ntfsmounter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9F48D0F82AC848130004FDCB /* Debug */,
+				9F48D0F92AC848130004FDCB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		9F7EB8382BAFE9C50017AFFE /* XCRemoteSwiftPackageReference "KeychainAccess" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kishikawakatsumi/KeychainAccess";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		9F7EB8392BAFE9C50017AFFE /* KeychainAccess */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9F7EB8382BAFE9C50017AFFE /* XCRemoteSwiftPackageReference "KeychainAccess" */;
+			productName = KeychainAccess;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 9F48D0E82AC848130004FDCB /* Project object */;
+}
