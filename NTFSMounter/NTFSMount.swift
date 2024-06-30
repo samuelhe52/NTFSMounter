@@ -7,7 +7,6 @@
 
 import Foundation
 
-// Function to mount NTFS volumes
 func NTFSMount(usingStoredPassword: Bool) {
     // Fetch information about currently mounted volumes
     let mountedDisks = fetchVolumeInfo()
