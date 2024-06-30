@@ -7,11 +7,11 @@
 
 import Foundation
 
-enum TaskError: Error {
+enum ShellCommandError: Error {
     case RunCommandFailed(String)
 }
 
-extension TaskError: LocalizedError {
+extension ShellCommandError: LocalizedError {
     var errorDescription: String? {
         switch self {
         case .RunCommandFailed(let errorMessage):

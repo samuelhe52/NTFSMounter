@@ -11,17 +11,17 @@ import Foundation
  * - parameter command: A String containing the command you want to run; Seperating the command isn't necessary.
  */
 func runShellCommandWithDataOutputDisplay(_ command: String) throws -> Data? {
-    let task = Process()
+    let shellCommandProcess = Process()
     let outputPipe = Pipe()
     let errorPipe = Pipe()
     let safeErrorMessages = ["Password:\n",
                              "Password:",
                              "Password:The disk contains an unclean file system (0, 0).\nThe file system wasn\'t safely closed on Windows. Fixing.\n"]
 
-    task.standardOutput = outputPipe
-    task.standardError = errorPipe
-    task.executableURL = URL(filePath: "/bin/bash")
-    task.arguments = ["-c", command]
+    shellCommandProcess.standardOutput = outputPipe
+    shellCommandProcess.standardError = errorPipe
+    shellCommandProcess.executableURL = URL(filePath: "/bin/bash")
+    shellCommandProcess.arguments = ["-c", command]
 
     let outHandle = outputPipe.fileHandleForReading
     let errHandle = errorPipe.fileHandleForReading
@@ -52,8 +52,8 @@ func runShellCommandWithDataOutputDisplay(_ command: String) throws -> Data? {
         errHandle.waitForDataInBackgroundAndNotify()
     }
 
-    try task.run()
-    task.waitUntilExit()
+    try shellCommandProcess.run()
+    shellCommandProcess.waitUntilExit()
 
     if let outputObserver = outputObserver {
         NotificationCenter.default.removeObserver(outputObserver)
@@ -65,7 +65,7 @@ func runShellCommandWithDataOutputDisplay(_ command: String) throws -> Data? {
     
     if !errorData.isEmpty {
         guard safeErrorMessages.contains(String(data: errorData, encoding: .utf8)!) else {
-            throw TaskError.RunCommandFailed(String(data: errorData, encoding: .utf8) ?? "")
+            throw ShellCommandError.RunCommandFailed(String(data: errorData, encoding: .utf8) ?? "")
         }
     }
 
@@ -85,32 +85,32 @@ func runShellCommandDisplay(_ command: String) throws -> String? {
  * - parameter command: A String containing the command you want to run; Seperating the command isn't necessary.
  */
 func runShellCommandWithDataOutput(_ command: String) throws -> Data? {
-    let task = Process()
+    let shellCommandProcess = Process()
     let safeErrorMessages = ["Password:\n",
                              "Password:",
                              "Password:The disk contains an unclean file system (0, 0).\nThe file system wasn\'t safely closed on Windows. Fixing.\n"]
     
-    task.executableURL = URL(filePath: "/bin/bash")
-    task.arguments = ["-c", command]
+    shellCommandProcess.executableURL = URL(filePath: "/bin/bash")
+    shellCommandProcess.arguments = ["-c", command]
     
     let stdoutPipe = Pipe()
     let stderrPipe = Pipe()
     
-    task.standardError = stderrPipe
-    task.standardOutput = stdoutPipe
+    shellCommandProcess.standardError = stderrPipe
+    shellCommandProcess.standardOutput = stdoutPipe
     
     do {
-        try task.run()
+        try shellCommandProcess.run()
     } catch {
         throw error
     }
     
-    task.waitUntilExit()
+    shellCommandProcess.waitUntilExit()
     
     if let errdata = try? stderrPipe.fileHandleForReading.readToEnd() {
         let err = String(data: errdata, encoding: .utf8)!
         guard safeErrorMessages.contains(err) else {
-            throw TaskError.RunCommandFailed(err)
+            throw ShellCommandError.RunCommandFailed(err)
         }
     }
     
