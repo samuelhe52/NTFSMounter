@@ -8,14 +8,14 @@
 import Foundation
 
 enum ShellCommandError: Error {
-    case RunCommandFailed(String)
+    case RunCommandFailed(Int32)
 }
 
 extension ShellCommandError: LocalizedError {
     var errorDescription: String? {
         switch self {
-        case .RunCommandFailed(let errorMessage):
-            return NSLocalizedString("Run Command Failed with the following error: \(errorMessage)", comment: "")
+        case .RunCommandFailed(let returnCode):
+            return NSLocalizedString("Run command failed with non-zero exit code: \(returnCode)", comment: "")
         }
     }
 }

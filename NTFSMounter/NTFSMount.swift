@@ -20,7 +20,7 @@ func NTFSMount(usingStoredPassword: Bool) {
     for disk in NTFSDisks {
         let diskName = disk["Name"]!
         let diskIdentifier = disk["Identifier"]!
-        var command = "echo \(userPwd) | sudo -S /opt/homebrew/bin/ntfs-3g /dev/\(diskIdentifier) /Volumes/NTFS/\(diskName) -o volname=\(diskName)_macFUSE -o local -o allow_other -o auto_xattr -o auto_cache"
+        let command = "echo \(userPwd) | sudo -S /opt/homebrew/bin/ntfs-3g /dev/\(diskIdentifier) /Volumes/NTFS/\(diskName) -o volname=\(diskName)_macFUSE -o local -o allow_other -o auto_xattr -o auto_cache"
 
         
         func remount(commandForRemount: String) {
