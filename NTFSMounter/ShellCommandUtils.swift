@@ -37,7 +37,7 @@ func runShellCommandWithDataOutputDisplay(_ command: String) throws -> Data? {
 
     shellCommandProcess.waitUntilExit()
     NotificationCenter.default.removeObserver(outputObserver)
-    guard shellCommandProcess.terminationStatus != 0 else {
+    guard shellCommandProcess.terminationStatus == 0 else {
         throw ShellCommandError.RunCommandFailed(shellCommandProcess.terminationStatus)
     }
     let outputData = try? stdoutFileHandle.readToEnd()
@@ -72,7 +72,7 @@ func runShellCommandWithDataOutput(_ command: String) throws -> Data? {
     }
     
     shellCommandProcess.waitUntilExit()
-    guard shellCommandProcess.terminationStatus != 0 else {
+    guard shellCommandProcess.terminationStatus == 0 else {
         throw ShellCommandError.RunCommandFailed(shellCommandProcess.terminationStatus)
     }
     let outdata = try? stdoutPipe.fileHandleForReading.readToEnd()

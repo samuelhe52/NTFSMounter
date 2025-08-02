@@ -10,12 +10,29 @@ import CryptoKit
 
 let fileManager = FileManager.default
 var configEdit = false
-let arguments = CommandLine.arguments
-if arguments.count > 1 {
-    if arguments[1] == "--config" {
+
+let usageMessage = """
+        To edit config, use:
+        
+        ntfsmounter config
+        
+        To mount ntfs disks, use:
+        
+        ntfsmounter
+        """
+
+if CommandLine.arguments.count == 2 {
+    let arg = CommandLine.arguments[1]
+    if arg == "config" {
         configEdit = true
         try? fileManager.removeItem(at: configFolderPath)
+    } else {
+        print(usageMessage)
+        exit(1)
     }
+} else if CommandLine.arguments.count > 2 {
+    print(usageMessage)
+    exit(1)
 }
 
 if !fileManager.fileExists(atPath: configFolderPath.path()) || !fileManager.fileExists(atPath: configFilePath.path()) || configEdit {
